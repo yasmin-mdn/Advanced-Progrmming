@@ -1,0 +1,5 @@
+the target is :residental area
+needed forces:
+385  infantries
+6  bombers
+10  panzers

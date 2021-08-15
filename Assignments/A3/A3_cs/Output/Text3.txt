@@ -1,0 +1,4 @@
+the target is :land
+needed forces:
+407  infantries
+10  panzers

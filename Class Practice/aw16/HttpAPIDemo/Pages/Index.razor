@@ -1,0 +1,42 @@
+﻿@using System.Net.Http
+@inject HttpClient Http
+@page "/"
+
+
+
+<button @onclick="CallAPI"> call me</button>
+@foreach (var item in dailyreports)
+{
+    <p>@item.ToString()</p>
+}
+
+
+
+
+
+@code{
+    private string Jasonstring {get;set;}="";
+    private Dailyreport[] dailyreports;
+    private async Task CallAPI(){
+      HttpResponseMessage response=null;
+        try{
+              string uri="https://covid-19-data.p.rapidapi.com/report/totals?date-format=YYYY-MM-DD&format=json&date=2020-04-01";
+            var request = new HttpRequestMessage{
+            Method=HttpMethod.Get,
+            RequestUri=new Uri(uri),
+            Headers={
+                {"x-rapidapi-host", "covid-19-data.p.rapidapi.com"},
+                {"x-rapidapi-key", "df2438bf92msh78ff320d9a4c04cp1594f3jsna64c8366dff5"},
+            },
+        };
+         response=await Http.SendAsync(request);
+        }
+        catch(Exception e){
+            Console.WriteLine(e.Message);
+        }
+        
+           this.Jasonstring= response !=null ? await response.Content.ReadAsStringAsync():"Null";
+            this.dailyreports=response !=null ? await response.Content.ReadFromJsonAsync<Dailyreport[]>():new Dailyreport[]{};
+       
+    }
+}

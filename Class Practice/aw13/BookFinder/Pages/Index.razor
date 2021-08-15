@@ -1,0 +1,160 @@
+﻿@page "/"
+@using System.Globalization
+
+<div class="container" style="background-color: gray;" >
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-4"></div>
+            <div class="col-4">
+                <input @bind="searchkey" style="background-color:sandybrown" />
+                <button @onclick="() => {if(searchkey!=null){FindBook();}}"style="width:3cm;Height:1cm;background-color:yellow"><span class="oi oi-magnifying-glass"></span></button>
+            </div> 
+
+    </div>
+     <div class="row"></div>
+    <div class="row">
+        <div class="col-7"></div>
+        <div class="col">
+         
+                      @if(analyze==true){
+                            <table style="width:100%">
+                            <tr>
+                             <th>TotalWords</th>
+                             <th>Posetive</th>
+                             <th>Negetive</th>
+                             </tr>
+                             <tr>
+                           <td>@totalwords</td>
+                           <td>@posetivenomber</td>
+                           <td>@negetivenomber</td>
+                         </tr>
+                        </table>
+                        analyze=!analyze;
+
+                <RadzenChart>
+                <RadzenLineSeries  Data="@chartDatas" CategoryProperty="idx" Title="" LineType="LineType.Dashed" ValueProperty="Value">
+                    <RadzenMarkers MarkerType="MarkerType.Square" />
+                </RadzenLineSeries>
+              
+            </RadzenChart>
+
+            }
+            </div>
+    </div>
+
+
+    @if(search==true){
+        
+         <div class="row">
+        <div class="col-4 scroll">
+             <div class="card" style="width: 12; height:15cm; background-color:pink;">
+                <img src=@findedbookimagepath class="card-img-top"style="height: 6cm; width: 4cm; margin-top: 0.5cm; ">
+                <div class="card-body">
+                    <h5 class="card-title CardFont">@findedbookname</h5>
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button @onclick ="()=>{analyze=!analyze; if(analyze==true){Analyze();}}">Analyze</button>
+                    </div>
+                    
+                    <p class="card-text">@content</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    }
+   
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                
+            </div>  
+        </div>
+        <div class="row">
+            
+        </div>
+</div>
+
+
+@code{   
+    private string findedbookname = "";
+    private string findedbookpath = "";
+    private string content = "";
+    bool search = false;
+    bool analyze = false;
+
+
+    private float posetiveRate = 0;
+    private float negetiveRate = 0;
+    private float PosetiveDividedbyNegetiv = 0;
+    private int totalwords = 0;
+
+    private int posetivenomber = 0;
+    private int negetivenomber = 0;
+
+
+   private List<ChartData> chartDatas=new List<ChartData>();
+
+
+    private string findedbookimagepath = "";
+    private string searchkey = null;
+
+    protected override void OnInitialized()
+    {
+        BookFinder.Data.Book.GetFilesFromDirectories();
+    }
+
+
+    private void FindBook()
+    {
+        content = "";
+        findedbookname = "";
+        findedbookimagepath = "";
+        search = true;
+        var input = searchkey;
+        var findedbook = BookFinder.Data.Book.FindBook(input);
+        findedbookpath = findedbook;
+        var findedbookimage = BookFinder.Data.Book.FindBookImage(input);
+        var words = BookFinder.Data.Book.First50Words(findedbook);
+        findedbookname = findedbook.Split('\\', '.')[2];
+        content = words;
+        findedbookimagepath = findedbookimage.Split('\\')[1] + "\\" + findedbookimage.Split('\\')[2];
+        searchkey = null;
+    }
+    private void Analyze()
+    {
+
+        totalwords = 0;
+        posetivenomber = 0;
+        negetivenomber = 0;
+        totalwords = BookFinder.Data.Book.IndexFile(findedbookpath);
+        BookFinder.Data.Book.CountPandN(findedbookpath);
+        posetivenomber=BookFinder.Data.Book.posetivewordsper100line.Count;
+        negetivenomber=BookFinder.Data.Book.negetivewordsper100line.Count;
+
+        posetiveRate = BookFinder.Data.Book.posetivewordsper100line.Sum() / totalwords;
+        negetiveRate = BookFinder.Data.Book.negetivewordsper100line.Sum() / totalwords;
+        PosetiveDividedbyNegetiv = posetiveRate / negetiveRate;
+
+        /////making chart data
+      
+
+        for(int i=0;i<BookFinder.Data.Book.negetivewordsper100line.Count;i++){
+            this.chartDatas.Add(new ChartData(i,(float)BookFinder.Data.Book.posetivewordsper100line[i]/BookFinder.Data.Book.negetivewordsper100line[i]));
+        }
+
+        
+
+    }
+
+
+    class ChartData{
+        public int idx{ get; set;}
+        public float Value{get; set;}
+        public ChartData(int a , float b){
+            this.idx=a;
+            this.Value=b;
+        }
+    }
+
+
+}
+

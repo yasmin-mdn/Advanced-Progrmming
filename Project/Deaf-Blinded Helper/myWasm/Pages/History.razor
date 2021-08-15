@@ -1,0 +1,41 @@
+@using myShared.Services
+@using myShared.Models
+@page "/ShowHistory/{value}"
+@inject HttpClient Http
+@inject UserService userservice
+
+ <RadzenButton Click="@((args) => Click(args))" Text="show" style=" position:absolute; left: 987px;top: 89px;background-color: #f9777f;"></RadzenButton>
+  
+  <RadzenCard Style="width:600px;position: absolute;left: 468px;top: 142px;background-color:blanchedalmond; margin-bottom: 20px; height:500px;">
+   <div><p style="font-size: larger;font-style: italic;">Search history for :  @userservice.user.UserName</p></div>
+   @if(tmp==true){
+   <p style="font-size: larg">@toshow</p>
+   }
+  </RadzenCard>
+   
+
+@code{
+   
+HttpResponseMessage response= null;
+string toshow="";
+bool tmp=false;
+
+[Parameter]
+public string value{get;set;}
+protected override void OnParametersSet()
+{
+   var t=value;
+}  
+
+
+
+async void Click(MouseEventArgs args)
+ {
+      var uri = $"https://localhost:5004/User/SearchHistory/{userservice.user.UserName}";
+      try { toshow = await Http.GetStringAsync(uri); 
+      tmp=true; }
+      catch (Exception e) { System.Console.WriteLine(e.Message);}
+       
+   }
+
+}

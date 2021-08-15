@@ -1,0 +1,13 @@
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.exe
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.deps.json
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.runtimeconfig.json
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.runtimeconfig.dev.json
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.dll
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\bin\Debug\netcoreapp3.1\BookFinderConsole.pdb
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.csprojAssemblyReference.cache
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.AssemblyInfoInputs.cache
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.AssemblyInfo.cs
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.csproj.CoreCompileInputs.cache
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.dll
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.pdb
+C:\git\AP98992\TA\aw16\BookFinder\BookFinderConsole\obj\Debug\netcoreapp3.1\BookFinderConsole.genruntimeconfig.cache

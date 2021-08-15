@@ -1,0 +1,4 @@
+the target is :millitary base
+needed forces:
+308  infantries
+14  panzers

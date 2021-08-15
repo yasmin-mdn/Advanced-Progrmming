@@ -1,0 +1,13 @@
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.exe
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.deps.json
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.runtimeconfig.json
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.runtimeconfig.dev.json
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.dll
+C:\git\AP98992\class\c15\C15_cs\C15_cs\bin\Debug\netcoreapp3.1\C15_cs.pdb
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.csprojAssemblyReference.cache
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.csproj.CoreCompileInputs.cache
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.AssemblyInfoInputs.cache
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.AssemblyInfo.cs
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.dll
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.pdb
+C:\git\AP98992\class\c15\C15_cs\C15_cs\obj\Debug\netcoreapp3.1\C15_cs.genruntimeconfig.cache

@@ -1,0 +1,11 @@
+C:\git\AP98992\class\c10\c10_cs\obj\Debug\netcoreapp3.0\c10_cs.csprojAssemblyReference.cache
+C:\git\AP98992\class\c10\c10_cs\obj\Debug\netcoreapp3.0\c10_cs.AssemblyInfoInputs.cache
+C:\git\AP98992\class\c10\c10_cs\obj\Debug\netcoreapp3.0\c10_cs.AssemblyInfo.cs
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.exe
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.deps.json
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.runtimeconfig.json
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.runtimeconfig.dev.json
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.dll
+C:\git\AP98992\class\c10\c10_cs\bin\Debug\netcoreapp3.0\c10_cs.pdb
+C:\git\AP98992\class\c10\c10_cs\obj\Debug\netcoreapp3.0\c10_cs.dll
+C:\git\AP98992\class\c10\c10_cs\obj\Debug\netcoreapp3.0\c10_cs.pdb

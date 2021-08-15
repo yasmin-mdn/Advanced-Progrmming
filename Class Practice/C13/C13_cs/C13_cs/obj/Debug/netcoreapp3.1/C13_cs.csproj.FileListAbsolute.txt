@@ -1,0 +1,13 @@
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.exe
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.deps.json
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.runtimeconfig.json
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.runtimeconfig.dev.json
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.dll
+C:\git\AP98992\class\C13\C13_cs\C13_cs\bin\Debug\netcoreapp3.1\C13_cs.pdb
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.csprojAssemblyReference.cache
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.csproj.CoreCompileInputs.cache
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.AssemblyInfoInputs.cache
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.AssemblyInfo.cs
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.dll
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.pdb
+C:\git\AP98992\class\C13\C13_cs\C13_cs\obj\Debug\netcoreapp3.1\C13_cs.genruntimeconfig.cache

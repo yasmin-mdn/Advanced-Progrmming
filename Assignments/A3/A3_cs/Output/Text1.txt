@@ -1,0 +1,3 @@
+the target is :airport
+needed forces:
+319  infantries

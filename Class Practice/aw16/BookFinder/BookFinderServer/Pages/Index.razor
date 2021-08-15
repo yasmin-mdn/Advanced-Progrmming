@@ -1,0 +1,38 @@
+﻿@using BookFinderServer;
+@page "/"
+@using System.Globalization
+
+<div class="container" style="background-color: gray;" >
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-4"></div>
+            <div class="col-4">
+                <EditForm Model="@starship" OnValidSubmit="@HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <InputText id="identifier" @bind-Value="starship.Identifier" />
+                   <button type="submit" @onclick="() => {if(searchkey!=null){Search();}}"style="width:3cm;Height:1cm;background-color:yellow"><span class="oi oi-magnifying-glass"></span></button>
+                </EditForm>
+        </div> 
+    </div>
+    <p>@book.Name</p>
+</div>
+
+
+@code{    
+    private Starship starship = new Starship();
+    bool search = false;
+    bool analyze = false;
+    private List<ChartData> chartDatas=new List<ChartData>();
+    private string searchkey = null;
+    Book book;
+
+    private void HandleValidSubmit()
+    {
+        searchkey = starship.Identifier;
+    }
+
+    public void Search(){
+        book= Finder.FindBook(searchkey);
+    }
+
+}

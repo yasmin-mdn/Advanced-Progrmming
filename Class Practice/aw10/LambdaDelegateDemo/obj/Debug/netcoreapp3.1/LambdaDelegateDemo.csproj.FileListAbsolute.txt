@@ -1,0 +1,13 @@
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.exe
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.deps.json
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.runtimeconfig.json
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.runtimeconfig.dev.json
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.dll
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\bin\Debug\netcoreapp3.1\LambdaDelegateDemo.pdb
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.csprojAssemblyReference.cache
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.csproj.CoreCompileInputs.cache
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.AssemblyInfoInputs.cache
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.AssemblyInfo.cs
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.dll
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.pdb
+c:\git\AP98992\TA\aw10\LambdaDelegateDemo\obj\Debug\netcoreapp3.1\LambdaDelegateDemo.genruntimeconfig.cache

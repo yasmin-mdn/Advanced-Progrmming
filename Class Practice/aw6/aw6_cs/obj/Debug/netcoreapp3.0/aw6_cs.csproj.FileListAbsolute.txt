@@ -1,0 +1,11 @@
+C:\git\AP98992\TA\aw6\aw6_cs\obj\Debug\netcoreapp3.0\aw6_cs.csprojAssemblyReference.cache
+C:\git\AP98992\TA\aw6\aw6_cs\obj\Debug\netcoreapp3.0\aw6_cs.AssemblyInfoInputs.cache
+C:\git\AP98992\TA\aw6\aw6_cs\obj\Debug\netcoreapp3.0\aw6_cs.AssemblyInfo.cs
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.exe
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.deps.json
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.runtimeconfig.json
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.runtimeconfig.dev.json
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.dll
+C:\git\AP98992\TA\aw6\aw6_cs\bin\Debug\netcoreapp3.0\aw6_cs.pdb
+C:\git\AP98992\TA\aw6\aw6_cs\obj\Debug\netcoreapp3.0\aw6_cs.dll
+C:\git\AP98992\TA\aw6\aw6_cs\obj\Debug\netcoreapp3.0\aw6_cs.pdb

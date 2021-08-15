@@ -1,0 +1,3 @@
+the target is :land
+needed forces:
+319  infantries

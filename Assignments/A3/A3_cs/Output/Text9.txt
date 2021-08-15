@@ -1,0 +1,5 @@
+the target is :highway
+needed forces:
+297  infantries
+6  bombers
+20  panzers

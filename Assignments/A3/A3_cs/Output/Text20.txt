@@ -1,0 +1,5 @@
+the target is :airport
+needed forces:
+242  infantries
+9  bombers
+12  panzers

@@ -1,0 +1,225 @@
+﻿@using myShared.Models
+@using myShared.Services
+@using myShared.Repositories
+@using System.Linq
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using myWasm.Data
+@inject HttpClient Http
+@inject UserService userservice
+@page "/DeafBlindHelper/{myvalue}"
+@inject NavigationManager NavigationManager
+<div class="container">
+    <EditForm Model="@starship" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="alert"style="position:absolute; left:500px;">
+    <strong><ValidationSummary /></strong>
+    </div>
+
+    <InputText id="Sentence here" @bind-Value="starship.Sentence" style="margin-bottom: 20px ; margin-top: 20px ;  width:429px; position:absolute; left:500px; top:20px; background-color:rgb(224, 224, 224);"/>
+       <button type="submit" @onclick="() =>Change()" Style="margin-bottom: 20px; width: 100px; height: 40px; position:absolute; left:680px; top:100px; background-color:rgb(158, 158, 158);"><span class="oi oi-magnifying-glass"></span></button>
+    </EditForm>
+    <RadzenTabs style="width: 600px; height:460px;position:absolute; left:250px; top:200px;">
+        
+        <Tabs>
+            <RadzenTabsItem style="background-color:rgb(3, 169, 244);  font-size:20px;" Text="Active Sensors">
+                <RadzenImage Path="Hands\Left.jpg" style="width:500px; height:350px;" />
+
+               @if(sensorStates.a){
+                   <span class="oi oi-media-record" style="position:absolute; left:331px; top:102px;"></span>
+               }
+               @if(sensorStates.m){
+                <span class="oi oi-media-record" style="position:absolute; left:258px; top:86px;"></span>
+               }
+                @if(sensorStates.x.x1_On){
+                    <span class="oi oi-media-record" style="position:absolute; left:414px; top:153px;"></span>
+               }
+                @if(sensorStates.x.x2_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:360px; top:200px;"></span>
+               }
+                @if(sensorStates.p.p1_On){
+                    <span class="oi oi-media-record" style="position:absolute; left:65px; top:195px;"></span>
+               }
+                @if(sensorStates.p.p2_On){
+                    <span class="oi oi-media-record" style="position:absolute; left:100px; top:250px;"></span>
+               }
+                @if(sensorStates.p.p3_On){
+                <span class="oi oi-media-record" style="position:absolute; left:164px; top:238px;"></span>
+               }
+                @if(sensorStates.i.i1_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:165px; top:100px;"></span>
+               }
+                @if(sensorStates.i.i2_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:143px; top:127px;"></span>
+               }
+                @if(sensorStates.i.i3_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:153px; top:156px;"></span>
+               }
+                @if(sensorStates.i.i4_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:169px; top:135px;"></span>
+               }
+                @if(sensorStates.i.i5_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:159px; top:183px;"></span>
+               }
+                @if(sensorStates.i.i6_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:186px; top:181px;"></span>
+               }
+                @if(sensorStates.palm.palm0_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:274px; top:335px;"></span>
+               }
+                @if(sensorStates.palm.palm1_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:254px; top:274px;"></span>
+               }
+                @if(sensorStates.palm.palm2_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:280px; top:274px;"></span>
+               }
+                @if(sensorStates.palm.palm3_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:338px; top:274px;"></span>
+               }
+               @if(sensorStates.palm.palm4_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:254px; top:250px;"></span>
+               }
+               @if(sensorStates.palm.palm5_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:338px; top:254px;"></span>
+               }
+               @if(sensorStates.palm.palm6_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:254px; top:220px;"></span>
+               }
+               @if(sensorStates.palm.palm7_On){
+                   <span class="oi oi-media-record" style="position:absolute; left:338px; top:225px;"></span>
+               }
+            </RadzenTabsItem>
+           
+        </Tabs>
+    </RadzenTabs>
+    <div style="color: blue;font-size:20px;position:absolute; left:950px; top:220px;"><p>Showing Word</p></div>
+    <RadzenCard Style="width:200px; height:60px;font-size:15px;align-items: center;  position:absolute; left:950px; top:250px;">
+        <p style="font-weight: bold;">@Showingword</p>
+    </RadzenCard>
+    <RadzenCard Style="width:200px; height:60px;font-size:15px;align-items: center;  position:absolute; left:950px; top:430px;">
+        <p style="font-weight: bold;">@showingletter</p>
+    </RadzenCard>
+
+    <div style="font-size:20px;color: blue;position:absolute; left:950px; top:400px;"><p>Showing Letter</p></div>
+    <RadzenImage Path=@imagepath style="width:199px; height:149px; background-color: white; position:absolute; left:950px; top:501px;" />
+    <RadzenButton Click="@((args) => ClickPereviousLetter(args))" Icon="navigate_before"  Style=" font-size:10px; width: 100px; height: 40px; position:absolute; left:450px; top:680px; background-color:rgb(15, 137, 234);"/>
+    <RadzenButton Click="@((args) => ClickNextLettter(args))" Icon="navigate_next"  Style="font-size:10px; width: 100px; height: 40px; position:absolute; left:560px; top:680px; background-color:rgb(15, 137, 234);"/>
+     <RadzenButton Click="@((args) => ClickPereviousWord(args))" Text="PereviousWord"  Style="font-size:10px; width: 150px; height: 40px; position:absolute; left:282px; top:680px; background-color:rgb(112, 174, 254);"/>
+    <RadzenButton Click="@((args) => ClickNextWord(args))" Text="NextWord"  Style="font-size:10px; width: 150px; height: 40px; position:absolute; left:672px; top:680px; background-color:rgb(112, 174, 254);"/>
+        @if(show){
+            <RadzenButton Click="@((args) => ClickHistory(args))" Text="History" style=" position:absolute; left: 987px;top: 89px;background-color: #0f89ea;"></RadzenButton>
+    <RadzenButton Click="@((args) => ClickAddHistory(userservice.user.UserName+","+addingword))" Text="Add" style=" position:absolute;width:116px; left: 987px;top:47px;background-color: #0f89ea;"></RadzenButton>
+        }
+    
+  
+</div>
+@code {
+    HttpResponseMessage response = null;
+
+    private Starship starship = new Starship();
+    List<string> DesiredSentence = new List<string>();
+    List<char> CurrentWord = new List<char>();
+    bool show = false;
+    string imagepath = "";
+    string Showingword = "";
+    int letterindex;
+    int wordindex;
+    char showingletter = ' ';
+    string addingword = "";
+    public ((bool p1_On, bool p2_On, bool p3_On) p, (bool palm0_On, bool palm1_On, bool palm2_On, bool palm3_On, bool palm4_On, bool palm5_On, bool palm6_On, bool palm7_On) palm, (bool i1_On, bool i2_On, bool i3_On, bool i4_On, bool i5_On, bool i6_On) i, bool m, bool a, (bool x1_On, bool x2_On) x, bool off) sensorStates;
+    private void HandleValidSubmit()
+    {
+        DesiredSentence = starship.Sentence.ToLower().Split().ToList();
+        addingword = starship.Sentence;
+        CurrentWord = DesiredSentence[0].ToList();
+        Showingword = DesiredSentence[0];
+        showingletter = CurrentWord[0];
+        letterindex = 0;
+        wordindex = 0;
+        sensorStates = methodes.CheckForOnSensors(showingletter);
+        imagepath = methodes.GetletterImagePath(showingletter);
+        show = true;
+
+    }
+    void Change() { }
+    void ClickPereviousWord(MouseEventArgs args)
+    {
+        if (DesiredSentence.Count() != 0)
+        {
+            StateHasChanged();
+            letterindex = 0;
+            methodes.PreviousWord(DesiredSentence, ref wordindex);
+            CurrentWord = DesiredSentence[wordindex].ToList();
+            Showingword = DesiredSentence[wordindex];
+            showingletter = Showingword[0];
+            imagepath = methodes.GetletterImagePath(showingletter);
+            sensorStates = methodes.CheckForOnSensors(showingletter);
+        }
+    }
+    void ClickNextWord(MouseEventArgs args)
+    {
+
+        if (DesiredSentence.Count() != 0)
+        {
+            letterindex = 0;
+            methodes.NextWord(DesiredSentence, ref wordindex);
+            CurrentWord = DesiredSentence[wordindex].ToList();
+            Showingword = DesiredSentence[wordindex];
+            showingletter = Showingword[0];
+            imagepath = methodes.GetletterImagePath(showingletter);
+            sensorStates = methodes.CheckForOnSensors(showingletter);
+            StateHasChanged();
+        }
+
+
+
+    }
+
+
+    void ClickPereviousLetter(MouseEventArgs args)
+    {
+        if (DesiredSentence.Count() != 0)
+        {
+            StateHasChanged();
+            methodes.PreviousLetter(CurrentWord, ref letterindex);
+            showingletter = CurrentWord[letterindex];
+            imagepath = methodes.GetletterImagePath(showingletter);
+            sensorStates = methodes.CheckForOnSensors(showingletter);
+        }
+    }
+    void ClickNextLettter(MouseEventArgs args)
+    {
+        if (DesiredSentence.Count() != 0)
+        {
+            StateHasChanged();
+            methodes.NextLetter(CurrentWord, ref letterindex);
+            showingletter = CurrentWord[letterindex];
+            sensorStates = methodes.CheckForOnSensors(showingletter);
+            imagepath = methodes.GetletterImagePath(showingletter);
+        }
+    }
+    void ClickHistory(MouseEventArgs args)
+    {
+        NavigationManager.NavigateTo($"/ShowHistory/{userservice.user.UserName}");
+    }
+    async void ClickAddHistory(string st)
+    {
+        var uri = $"https://localhost:5004/User/AddHistory/{st}";
+        try { response = await Http.PostAsJsonAsync(uri, st); }
+        catch (Exception e) { System.Console.WriteLine(e.Message); }
+
+    }
+
+
+    [Parameter]
+    public string myvalue { get; set; }
+    protected override void OnParametersSet()
+    {
+        //the param will be set 
+        var test = myvalue;
+    }
+
+
+}
+    
+}

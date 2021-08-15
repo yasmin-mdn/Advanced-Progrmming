@@ -1,0 +1,11 @@
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.exe
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.deps.json
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.runtimeconfig.json
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.runtimeconfig.dev.json
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.dll
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\bin\Debug\netcoreapp3.0\A3_cs.pdb
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\obj\Debug\netcoreapp3.0\A3_cs.csprojAssemblyReference.cache
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\obj\Debug\netcoreapp3.0\A3_cs.AssemblyInfoInputs.cache
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\obj\Debug\netcoreapp3.0\A3_cs.AssemblyInfo.cs
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\obj\Debug\netcoreapp3.0\A3_cs.dll
+C:\git\AP98992\Assignments\A3\A3_cs\A3_cs\obj\Debug\netcoreapp3.0\A3_cs.pdb

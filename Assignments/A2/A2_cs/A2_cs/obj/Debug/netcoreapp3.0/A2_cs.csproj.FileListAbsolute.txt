@@ -1,0 +1,11 @@
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.exe
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.deps.json
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.runtimeconfig.json
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.runtimeconfig.dev.json
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.dll
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\bin\Debug\netcoreapp3.0\A2_cs.pdb
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\obj\Debug\netcoreapp3.0\A2_cs.csprojAssemblyReference.cache
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\obj\Debug\netcoreapp3.0\A2_cs.AssemblyInfoInputs.cache
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\obj\Debug\netcoreapp3.0\A2_cs.AssemblyInfo.cs
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\obj\Debug\netcoreapp3.0\A2_cs.dll
+c:\git\AP98992\Assignments\A2\A2_cs\A2_cs\obj\Debug\netcoreapp3.0\A2_cs.pdb

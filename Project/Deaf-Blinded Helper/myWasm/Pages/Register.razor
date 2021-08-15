@@ -1,0 +1,54 @@
+@using myShared.Models
+@page "/Register"
+@inject HttpClient Http
+@using System.Net.Http
+@using myShared.Services
+@inject NavigationManager NavigationManager
+@inject UserService userservice
+<RadzenCard Style="width:600px;position: absolute;left: 197px;top: 100px;height:500px;background-color:#007bff">
+    <h1 style="position: absolute;left: 25px;top: 30px;color: darkblue;">Register</h1>
+<h3 style="position: absolute;left:25px;top:163px;color: white;">Password</h3>
+ <RadzenPassword Style="margin-bottom: 20px;position: absolute;left: 125px;top:163px ;width: 450px;" Change="@(args => Changepass(args))" />
+ <h3 style="position: absolute;left: 25px;top:110px;color: white;">Username</h3>
+ <RadzenTextBox Style="margin-bottom: 20px;position: absolute ;left: 125px;top:110px;width: 450px;" Change="@(args => Changeuser(args))" />
+ <RadzenButton Click="@((args) => Registermethod())" Text="register" Style="margin-bottom: 20px;width: 121px;position: absolute;left: 433px;top: 405px;background-color:#194b82" />
+</RadzenCard>
+
+@code{
+   
+    User user2=new User();
+     
+    HttpResponseMessage response2= null;
+    void Changepass(string pass)
+    {
+      
+       user2.PassWord=pass;
+       
+    }
+    void Changeuser(string un)
+    {
+        user2.UserName=un;
+        user2.id=0;
+        user2.SearchHistoryString="";
+       // userservice.user.UserName=un;
+        //userservice.user.SearchHistoryString="";
+    }
+
+    private async void Registermethod()
+    {   
+        userservice.UserServicePass( user2);
+        var uri=@"https://localhost:5004/User";
+        try{response2= await Http.PostAsJsonAsync(uri,userservice.user);}
+       catch(Exception e){System.Console.WriteLine(e.Message);}
+         if(response2.Content.ReadAsStringAsync().Result.ToString()=="true"){
+            NavigationManager.NavigateTo($"DeafBlindHelper/{userservice.user.UserName}");
+        }
+        else{
+            NavigationManager.NavigateTo("/");
+        }
+       
+    }
+    
+       
+   
+}
